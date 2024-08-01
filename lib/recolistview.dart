@@ -1,10 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class RecoListView extends StatelessWidget {
-  const RecoListView({
-    super.key,
-  });
+  const RecoListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,29 +13,40 @@ class RecoListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.only(right: 10),
-            width: 200,
-            decoration: BoxDecoration(
-
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Container(
-
-              height: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
-                    image: AssetImage("assets/images/silence.jpg")
-                    , fit: BoxFit.fill
-
-
+            width: 400, 
+            child: Row(
+              children: [
+             
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/images/silence.jpg"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-
-
+               
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/images/speak.jpg"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           );
-        }),
-          );
-
+        },
+      ),
+    );
   }
 }
